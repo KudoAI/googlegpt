@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.23.1
+// @version             2023.10.2.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search?*
@@ -161,7 +161,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b3192595ebef3c59235eaa238a4a62cf4dd7b6bf/dist/chatgpt-2.3.2.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@2535c87dc1204a4dbe464b69450bfff6197d3d99/dist/chatgpt-2.3.5.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -221,9 +221,10 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
-                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
-                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                                  updateButtons = updateAlert.querySelectorAll('button')
+                            updateButtons[1].textContent = messages.buttonLabel_update
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss
                         }
 
                         return
@@ -235,7 +236,7 @@
 
     // Define MENU functions
 
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     function registerMenu() {
         const menuIDs = [] // to store registered commands for removal while preserving order
@@ -310,16 +311,18 @@
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || ''
             const aboutAlertID = alert(
                 'GoogleGPT', // title
-                ' ' + messages.alert_version + ': ' + GM_info.script.version + '\n '
-                    + messages.alert_poweredBy + ': '
-                    + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
-                    + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
+                '🏷️ ' + messages.about_version + ': ' + GM_info.script.version + '\n'
+                    + '⚡ ' + messages.about_poweredBy + ': '
+                        + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                        + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
+                    + '📜 ' + messages.about_sourceCode + ':\n '
+                        + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                            + config.gitHubURL + '</a>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
-                    function githubSource() { safeWindowOpen(config.gitHubURL) },
                     function leaveAReview() { safeWindowOpen(
                         config.greasyForkURL + '/feedback#post-discussion') }
-                ], '', 524) // About modal width
+                ], '', 420) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
@@ -327,8 +330,6 @@
                     button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
                 else if (/review/i.test(button.textContent))
                     button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-                else if (/github/i.test(button.textContent))
-                    button.textContent = '📜 ' + messages.buttonLabel_githubSrc
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
@@ -370,7 +371,7 @@
             const html = new DOMParser().parseFromString(resp, 'text/html'),
                   title = html.querySelector('title')
             return title.innerText === messages.alert_justAmoment + '...'
-        } catch (error) { return false }
+        } catch (err) { return false }
     }
 
     function deleteOpenAIcookies() {
@@ -418,14 +419,8 @@
 
     // Define ANSWER functions
 
-    async function getShowReply(convo, callback) {
-
-        // Initialize attempt properties
-        if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
-        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
-
-        // Pick API
-        let endpoint, accessKey, model
+    let endpoint, accessKey, model
+    async function pickAPI() {
         if (config.proxyAPIenabled) { // randomize proxy API
             const untriedEndpoints = proxyEndpoints.filter((entry) => {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
@@ -439,18 +434,30 @@
             if (!accessKey) { googleGPTalert('login') ; return }
             model = 'text-davinci-002-render'
         }
+    }
+
+    function createPayload(msgs) {
+        return JSON.stringify(config.proxyAPIenabled
+            ? { messages: msgs, model: model }
+            : { action: 'next', messages: msgs, model: model,
+                parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
+    }
+
+    async function getShowReply(convo, callback) {
+
+        // Initialize attempt properties
+        if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
+        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
         // Get answer from ChatGPT
-        const data = JSON.stringify(
-            config.proxyAPIenabled ? { messages: convo, model: model }
-                                   : { action: 'next', messages: convo, model: model,
-                                       parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
+        await pickAPI()
+        const data = createPayload(convo)
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
             responseType: responseType(), data: data, onloadstart: onLoadStart(), onload: onLoad(),
-            onerror: (error) => {
-                googleGPTconsole.error(error)
+            onerror: (err) => {
+                googleGPTconsole.error(err)
                 if (!config.proxyAPIenabled) googleGPTalert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
@@ -493,7 +500,7 @@
             return (event) => {
                 if (event.status !== 200) {
                     googleGPTconsole.error('Event status: ' + event.status)
-                    googleGPTconsole.info('Event response: ' + event.responseText)
+                    googleGPTconsole.error('Event response: ' + event.responseText)
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
@@ -505,12 +512,13 @@
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
-                            const answer = JSON.parse(event.response
-                                .split('\n\n').slice(-3, -2)[0].slice(6)).message.content.parts[0]
+                            const responseParts = event.response.split('\n\n'),
+                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
+                                  answer = finalResponse.message.content.parts[0]
                             googleGPTshow(answer)
-                        } catch (error) {
-                            googleGPTconsole.error(googleGPTalerts.parseFailed + ': ' + error)
-                            googleGPTconsole.info('Response: ' + event.response)
+                        } catch (err) {
+                            googleGPTconsole.error(googleGPTalerts.parseFailed + ': ' + err)
+                            googleGPTconsole.error('Response: ' + event.response)
                             googleGPTalert('suggestProxy')
                         }
                     }
@@ -519,7 +527,7 @@
                         try { // to parse txt response from proxy endpoints
                             const answer = JSON.parse(event.responseText).choices[0].message.content
                             googleGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                        } catch (error) {
+                        } catch (err) {
                             googleGPTconsole.info('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
                                 googleGPTshow(messages.alert_censored)
@@ -544,7 +552,7 @@
                                 })()
 
                             } else { // use different endpoint or suggest OpenAI
-                                googleGPTconsole.error(googleGPTalerts.parseFailed + ': ' + error)
+                                googleGPTconsole.error(googleGPTalerts.parseFailed + ': ' + err)
                                 if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
                                 else googleGPTalert('suggestOpenAI')
                             }
@@ -634,7 +642,7 @@
                     centerCol.insertAdjacentElement('afterend', newDiv)
                     return newDiv
                 })()
-		)
+        )
         hostContainer.prepend(googleGPTdiv)
         const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
         convo.push(
@@ -675,7 +683,7 @@
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(messages)
-            } catch (error) { // if 404
+            } catch (err) { // if 404
                 msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
@@ -726,7 +734,7 @@
             + ( isDarkMode() ? 'background: #3a3a3a ; color: #f2f2f2 } ' : 'background: #eaeaea } ' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.googlegpt-container section.loading {'
-            + 'padding-left: 5px ;' // left-pad loading status when sending replies
+            + 'padding: 15px 0 0 5px ;' // left/top-pad loading status when sending replies
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.chatgpt-feedback { margin: 2px 0 25px }'
         + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 15.9em ; border: 7px solid transparent ;'
@@ -741,13 +749,14 @@
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
-        + '.chatgpt-modal h2 { margin: 0 ; padding: 0 } ' // shrink margin/padding around update alert title
-        + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem } ' // position/size update alert msg
+        + ( isDarkMode() ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
+        + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 } ' // shrink margin/padding around alert title + enlarge it
+        + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 } ' // position/size update alert msg
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
             + 'padding: 8px 15px !important ; cursor: pointer ; border-radius: 0 !important ; '
             + 'text-transform: uppercase ; border: 2px solid black !important } '
         + '.chatgpt-modal button:hover { color: white !important } ' // color text white on update alert button hovers
-        + '.chatgpt-modal div[class*=checkbox] label { position: relative ; bottom: -0.1857rem ; left: -2px } ' // position skip update checkbox
+        + ( isDarkMode() ? '.chatgpt-modal button:hover { background-color: #00cfff !important }' : '' )
     )
     document.head.appendChild(googleGPTstyle) // append style to <head>
 
