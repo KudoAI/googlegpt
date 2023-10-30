@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.2.1
+// @version             2023.10.29.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search?*
@@ -161,7 +161,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@2535c87dc1204a4dbe464b69450bfff6197d3d99/dist/chatgpt-2.3.5.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@0e7f70b06672b4e696739240c8545868b611cc05/dist/chatgpt-2.3.12.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -194,7 +194,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
+            onload: response => {
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -250,8 +250,7 @@
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(messages.menuLabel_proxyAPImode + ' '
-                + messages['state_' + ( config.proxyAPIenabled ? 'enabled' : 'disabled' )])
+            notify(messages.menuLabel_proxyAPImode + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
@@ -265,8 +264,7 @@
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(messages.alert_prefixMode + ' '
-                + messages['state_' + ( config.prefixEnabled ? 'enabled' : 'disabled' )])
+            notify(messages.mode_prefix + ' ' + state.word[+!config.prefixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
@@ -280,8 +278,7 @@
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(messages.alert_suffixMode + ' '
-                + messages['state_' + ( config.suffixEnabled ? 'enabled' : 'disabled' )])
+            notify(messages.mode_suffix + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
@@ -308,7 +305,7 @@
         menuIDs.push(GM_registerMenuCommand(aboutLabel, async () => {
 
             // Show alert
-            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || ''
+            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
             const aboutAlertID = alert(
                 'GoogleGPT', // title
                 '🏷️ ' + messages.about_version + ': ' + GM_info.script.version + '\n'
@@ -320,16 +317,18 @@
                             + config.gitHubURL + '</a>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
+                    function getSupport() { safeWindowOpen(config.supportURL) },
                     function leaveAReview() { safeWindowOpen(
-                        config.greasyForkURL + '/feedback#post-discussion') }
-                ], '', 420) // About modal width
+                        config.greasyForkURL + '/feedback#post-discussion') },
+                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                ], '', 515) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent))
-                    button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/review/i.test(button.textContent))
-                    button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
@@ -382,11 +381,11 @@
     }}})}
 
     function getOpenAItoken() {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             const accessToken = GM_getValue(config.prefix + '_openAItoken')
             googleGPTconsole.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
-                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: (response) => {
+                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
                     if (isBlockedbyCloudflare(response.responseText)) {
                         googleGPTalert('checkCloudflare') ; return }
                     try {
@@ -399,7 +398,7 @@
     })}
 
     function getAIGCFkey() {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             const publicKey = GM_getValue(config.prefix + '_aigcfKey')
             if (!publicKey) {
                 GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
@@ -407,7 +406,7 @@
                         'Content-Type': 'application/json',
                         'Referer': 'https://aigcfun.com/',
                         'X-Forwarded-For': chatgpt.generateRandomIP() },
-                    onload: (response) => {
+                    onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
                         if (!newPublicKey) { googleGPTconsole.error('Failed to get AIGCFun public key') ; return }
                         GM_setValue(config.prefix + '_aigcfKey', newPublicKey)
@@ -417,12 +416,26 @@
             } else resolve(publicKey)
     })}
 
+    async function refreshAIGCFendpoint() {
+        GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key
+        // Determine index of AIGCF in endpoint map
+        let aigcfMapIndex = -1
+        for (let i = 0 ; i < proxyEndpoints.length ; i++) {
+            const endpoint = proxyEndpoints[i]
+            if (endpoint.some(item => item.includes('aigcfun'))) {
+                aigcfMapIndex = i ; break
+        }}
+        // Update AIGCF endpoint w/ fresh key (using fresh IP)
+        proxyEndpoints[aigcfMapIndex][0] = (
+            'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
+    }
+
     // Define ANSWER functions
 
     let endpoint, accessKey, model
     async function pickAPI() {
         if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedEndpoints = proxyEndpoints.filter((entry) => {
+            const untriedEndpoints = proxyEndpoints.filter(entry => {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
@@ -451,12 +464,11 @@
 
         // Get answer from ChatGPT
         await pickAPI()
-        const data = createPayload(convo)
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
-            responseType: responseType(), data: data, onloadstart: onLoadStart(), onload: onLoad(),
-            onerror: (err) => {
+            responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
+            onerror: err => {
                 googleGPTconsole.error(err)
                 if (!config.proxyAPIenabled) googleGPTalert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
@@ -478,7 +490,7 @@
         function onLoadStart() { // process streams for unproxied TM users
             googleGPTconsole.info('Endpoint used: ' + endpoint)
             if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
-                return (stream) => {
+                return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
                         if (done) return
@@ -497,7 +509,7 @@
         })}}}
 
         function onLoad() {
-            return (event) => {
+            return async event => {
                 if (event.status !== 200) {
                     googleGPTconsole.error('Event status: ' + event.status)
                     googleGPTconsole.error('Event response: ' + event.responseText)
@@ -534,23 +546,7 @@
                             else if (event.responseText.includes('维护'))
                                 googleGPTshow(messages.alert_maintenance + '. ' + messages.alert_suggestOpenAI)
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
-                                GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key for fresh getAIGCFkey()
-
-                                // Determine index of AIGCF in endpoint map
-                                let aigcfMapIndex = -1
-                                for (let i = 0 ; i < proxyEndpoints.length ; i++) {
-                                    const endpoint = proxyEndpoints[i]
-                                    if (endpoint.some(item => item.includes('aigcfun'))) {
-                                        aigcfMapIndex = i ; break
-                                }}
-
-                                // Updated AIGCF endpoint w/ fresh key (using fresh IP)
-                                (async () => { // IIFE to use await
-                                    proxyEndpoints[aigcfMapIndex][0] = (
-                                        'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
-                                    getShowReply(convo, callback) // re-fetch reply
-                                })()
-
+                                await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
                             } else { // use different endpoint or suggest OpenAI
                                 googleGPTconsole.error(googleGPTalerts.parseFailed + ': ' + err)
                                 if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
@@ -589,11 +585,13 @@
         let prevLength = replyBox.value.length
 
         // Add listeners
-        form.addEventListener('keydown', enterToSubmit)
+        form.addEventListener('keydown', handleEnter)
         replyBox.addEventListener('input', autosizeBox)
 
-        function enterToSubmit(event) {
-            if (event.key === 'Enter' && event.target.nodeName === 'TEXTAREA') handleSubmit(event) }
+        function handleEnter(event) {
+            if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
+                handleSubmit(event)
+        }
 
         function handleSubmit(event) {
             event.preventDefault()
@@ -610,7 +608,7 @@
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
-            replyBox.removeEventListener('keydown', enterToSubmit)
+            replyBox.removeEventListener('keydown', handleEnter)
 
             // Show loading status
             const replySection = googleGPTdiv.querySelector('section')
@@ -658,17 +656,13 @@
     const config = {
         prefix: 'googlegpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/userscripts/googlegpt',
+        supportURL: 'https://github.com/userscripts/issues/new',
         greasyForkURL: '' }
     config.updateURL = config.greasyForkURL + '/code/GoogleGPT.meta.js'
     config.assetHostURL = 'https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/googlegpt/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = []
-
-    // Exit if prefix/suffix required but not present
-    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
-        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
-            return }
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -694,6 +688,11 @@
     }) ; const messages = await msgsLoaded
 
     registerMenu()
+
+    // Exit if prefix/suffix required but not present
+    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
+        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
+            return }
 
     // Init endpoints
     const openAIendpoints = {
@@ -753,10 +752,10 @@
         + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 } ' // shrink margin/padding around alert title + enlarge it
         + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 } ' // position/size update alert msg
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
-            + 'padding: 8px 15px !important ; cursor: pointer ; border-radius: 0 !important ; '
-            + 'text-transform: uppercase ; border: 2px solid black !important } '
-        + '.chatgpt-modal button:hover { color: white !important } ' // color text white on update alert button hovers
-        + ( isDarkMode() ? '.chatgpt-modal button:hover { background-color: #00cfff !important }' : '' )
+            + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ; padding: 5px !important ;'
+            + 'cursor: pointer ; border-radius: 0 !important ; '
+            + 'border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + ' !important } '
+        + '.modal-buttons { margin: 20px -5px -3px -10px !important }' // position modal buttons
     )
     document.head.appendChild(googleGPTstyle) // append style to <head>
 
