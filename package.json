@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "eslint": "^8.56.0"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pre-commit": "npm run lint"
-  }
-}
