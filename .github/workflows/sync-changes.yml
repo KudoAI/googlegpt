@@ -2,8 +2,8 @@ name: Sync (/ to adamlui/chatgpt-apps/googlegpt/) && (/greasemonkey/ to adamlui/
 
 on:
   push:
-    branches: main
-    paths: "**"
+    branches: [main]
+    paths: ["**"]
 
 jobs:
   build:
