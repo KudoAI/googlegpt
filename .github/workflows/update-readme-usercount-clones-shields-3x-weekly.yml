@@ -142,17 +142,17 @@ jobs:
           commit_msg+=" shield counters in READMEs"
           echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
 
-      - name: Sync / to adamlui/chatgpt-apps/bravegpt/
+      - name: Sync / to adamlui/chatgpt-apps/googlegpt/
         run: |
           rsync -avhr --delete --exclude={'.*','eslint*','package*json'} \
-            ${{ github.workspace }}/KudoAI/bravegpt/ \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/
+            ${{ github.workspace }}/KudoAI/googlegpt/ \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/
 
-      - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/bravegpt/
+      - name: Sync /greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/
         run: |
           rsync -avhr --delete \
-            ${{ github.workspace }}/KudoAI/bravegpt/greasemonkey/ \
-            ${{ github.workspace }}/adamlui/userscripts/chatgpt/bravegpt/
+            ${{ github.workspace }}/KudoAI/googlegpt/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/googlegpt/
 
       - name: Push to KudoAI/googlegpt
         run: |
