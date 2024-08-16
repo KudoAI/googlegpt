@@ -1,6 +1,8 @@
 name: Update usercount/clones shields in READMEs, sync to adamlui/chatgpt-apps + adamlui/userscripts
 
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: "42 5 * * 0,2,4" # every Sun/Tue/Thu @ 5:42a
 
 jobs:
   update-usercount-clones-shields:
