@@ -74,7 +74,7 @@ jobs:
 
       - name: Sync ** to adamlui/ai-apps/googlegpt/
         run: |
-          rsync -avhr --delete --exclude={'.*'} \
+          rsync -avhr --delete --exclude '.*' \
             ${{ github.workspace }}/KudoAI/googlegpt/ \
             ${{ github.workspace }}/adamlui/ai-apps/googlegpt/
 
