@@ -25,7 +25,7 @@
 <a href="https://github.com/KudoAI/googlegpt/blob/main/docs/LICENSE.md">
     <img alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/blob/main/greasemonkey/googlegpt.user.js">
-    <img height=32 src="https://img.shields.io/github/size/KudoAI/googlegpt/greasemonkey/googlegpt.user.js?label=Filesize&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+    <img src="https://img.shields.io/github/size/KudoAI/googlegpt/greasemonkey/googlegpt.user.js?label=Filesize&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/KudoAI/googlegpt">
     <img alt="[CodeFactor grade]" src="https://img.shields.io/codefactor/grade/github/KudoAI/googlegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge"></a>
 <a href="https://chatgpt.js.org?utm_source=googlegpt&utm_content=github_shield">

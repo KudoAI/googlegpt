@@ -25,7 +25,7 @@
 <a href="https://github.com/KudoAI/googlegpt/blob/main/docs/zh-cn/LICENSE.md">
     <img alt="[许可证：MIT]" src="https://img.shields.io/badge/执照-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/blob/main/greasemonkey/googlegpt.user.js">
-    <img alt="[文件大小]" height=32 src="https://img.shields.io/github/size/KudoAI/googlegpt/greasemonkey/googlegpt.user.js?label=%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+    <img alt="[文件大小]" src="https://img.shields.io/github/size/KudoAI/googlegpt/greasemonkey/googlegpt.user.js?label=%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/KudoAI/googlegpt">
     <img alt="[CodeFactor 评分]" src="https://img.shields.io/codefactor/grade/github/KudoAI/googlegpt?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge"></a>
 <a href="https://chatgpt.js.org?utm_source=googlegpt&utm_content=github_shield">
