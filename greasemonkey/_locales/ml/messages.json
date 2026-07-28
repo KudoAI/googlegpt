@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Google തിരയലിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (Google Gemma + GPT-4o നാൽ നയിക്കപ്പെടുന്നു!)" },
+  "appDesc": {
+    "message": "Google തിരയലിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (Google Gemma+ പവർ ചെയ്യുന്നത് ഏറ്റവും പുതിയ LLM-കൾ!)"
+  },
   "menuLabel_autoAnswer": { "message": "യാന്ത്രിക ഉത്തരം" },
   "menuLabel_autoSummarizeResults": { "message": "യാന്ത്രികമായി സംഗ്രഹിക്കുന്ന ഫലങ്ങൾ" },
   "menuLabel_autoFocusChatbar": { "message": "ഓട്ടോ-ഫോക്കസ് ചാറ്റ്ബാർ" },

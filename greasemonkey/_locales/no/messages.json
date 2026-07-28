@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Legger til AI-svar til Google Søk (drevet av Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Legger til AI-svar i Google Søk (drevet av Google Gemma + de nyeste LLM-ene!)" },
   "menuLabel_autoAnswer": { "message": "Autosvar" },
   "menuLabel_autoSummarizeResults": { "message": "Automatisk oppsummering av resultater" },
   "menuLabel_autoFocusChatbar": { "message": "Autofokus chatbar" },

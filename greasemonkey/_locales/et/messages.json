@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Lisab tehisintellekti vastused Google 'i otsingusse (toetab Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Lisab tehisintellekti vastused Google 'i otsingusse (toetab Google Gemma + uusimad LLM-id!)"
+  },
   "menuLabel_autoAnswer": { "message": "Automaatvastus" },
   "menuLabel_autoSummarizeResults": { "message": "Tulemuste automaatne summeerimine" },
   "menuLabel_autoFocusChatbar": { "message": "Automaatse teravustamise vestlusriba" },

@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Додає відповіді ШІ до Пошуку Google (на базі Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Додає відповіді ШІ до Пошуку Google (на базі Google Gemma + найновіших LLM!)" },
   "menuLabel_autoAnswer": { "message": "Автовідповідь" },
   "menuLabel_autoSummarizeResults": { "message": "Підсумуйте свої результати" },
   "menuLabel_autoFocusChatbar": { "message": "Панель чату з автофокусом" },

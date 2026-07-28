@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Faʻaopopo AI tali i Google Search (faʻamalosia e Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Faʻaopopo AI tali i Google Search (faʻamalosia e Google Gemma + le LLMs lata mai!)" },
   "menuLabel_autoAnswer": { "message": "Auto-Answer" },
   "menuLabel_autoSummarizeResults": { "message": "Faaiuga Auto-Summarize" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

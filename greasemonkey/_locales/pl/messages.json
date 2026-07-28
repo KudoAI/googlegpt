@@ -1,6 +1,6 @@
 {
   "appDesc": {
-    "message": "Dodaje odpowiedzi sztucznej inteligencji do wyszukiwarki Google (obsługiwanej przez Google Gemma + GPT-4o!)"
+    "message": "Dodaje odpowiedzi sztucznej inteligencji do wyszukiwarki Google (obsługiwanej przez Google Gemma + najnowsze LLM!)"
   },
   "menuLabel_autoAnswer": { "message": "Automatyczna odpowiedź" },
   "menuLabel_autoSummarizeResults": { "message": "Automatycznie podsumuj wyniki" },

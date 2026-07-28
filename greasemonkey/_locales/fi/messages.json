@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Lisää tekoälyvastaukset Google-hakuun (tarjoaa Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Lisää tekoälyvastaukset Google-hakuun (Google Gemma + uusimmat LLM: t!)" },
   "menuLabel_autoAnswer": { "message": "Automaattinen vastaus" },
   "menuLabel_autoSummarizeResults": { "message": "Automaattinen yhteenveto tuloksista" },
   "menuLabel_autoFocusChatbar": { "message": "Automaattitarkennuksen keskustelupalkki" },

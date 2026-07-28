@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Afegeix respostes d'IA a la cerca de Google (amb la tecnologia de Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Afegeix respostes d'IA a la cerca de Google (amb la tecnologia de Google Gemma + els últims LLM!)"
+  },
   "menuLabel_autoAnswer": { "message": "Resposta automàtica" },
   "menuLabel_autoSummarizeResults": { "message": "Resum automàtic dels resultats" },
   "menuLabel_autoFocusChatbar": { "message": "Barra de xat amb enfocament automàtic" },

@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Hoʻohui i nā pane AI i ka Huli Google (hoʻohana ʻia e Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Hoʻohui i nā pane AI i ka Google Search (i hoʻohana ʻia e Google Gemma + nā LLM hou loa!)" },
   "menuLabel_autoAnswer": { "message": "Pane-Aunoa" },
   "menuLabel_autoSummarizeResults": { "message": "Hōʻuluʻulu 'akomi i nā hopena" },
   "menuLabel_autoFocusChatbar": { "message": "Kūkākūkā Kūkākūkā-Aunoa" },

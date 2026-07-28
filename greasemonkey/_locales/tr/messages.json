@@ -1,6 +1,6 @@
 {
   "appDesc": {
-    "message": "Google Arama'ya yapay zeka yanıtları ekler (Google Gemma + GPT -4o tarafından desteklenmektedir!)"
+    "message": "Google Arama'ya yapay zeka yanıtları ekler (Google Gemma + tarafından desteklenmektedir) en son LLM'ler!)"
   },
   "menuLabel_autoAnswer": { "message": "otomatik yanıt" },
   "menuLabel_autoSummarizeResults": { "message": "Sonuçları Otomatik Özetle" },

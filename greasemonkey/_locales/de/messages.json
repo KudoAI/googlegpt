@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Fügt KI-Antworten zur Google-Suche hinzu (unterstützt von Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Fügt KI-Antworten zur Google-Suche hinzu (unterstützt von Google Gemma + den neuesten LLMs!)"
+  },
   "menuLabel_autoAnswer": { "message": "Auto Answer/Autom. Annahme" },
   "menuLabel_autoSummarizeResults": { "message": "Ergebnisse zusammenfassen" },
   "menuLabel_autoFocusChatbar": { "message": "Autofokus-Chatbar" },

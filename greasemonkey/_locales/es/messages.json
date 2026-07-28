@@ -1,6 +1,6 @@
 {
   "appDesc": {
-    "message": "Añade respuestas de IA a la Búsqueda de Google (¡con la tecnología de Google Gemma + GPT-4o!)"
+    "message": "Añade respuestas de IA a la Búsqueda de Google (¡con la tecnología de Google Gemma + los últimos LLM!)"
   },
   "menuLabel_autoAnswer": { "message": "Respuesta automática" },
   "menuLabel_autoSummarizeResults": { "message": "Resumir automáticamente los resultados" },

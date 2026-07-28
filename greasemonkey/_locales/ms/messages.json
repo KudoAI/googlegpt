@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Menambah jawapan AI ke Carian Google (dikuasakan oleh Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Menambah jawapan AI ke Carian Google (dikuasakan oleh Google Gemma + llm terkini!)" },
   "menuLabel_autoAnswer": { "message": "Jawapan Automatik" },
   "menuLabel_autoSummarizeResults": { "message": "Hasil Ringkasan Automatik" },
   "menuLabel_autoFocusChatbar": { "message": "Bar Sembang Fokus Automatik" },

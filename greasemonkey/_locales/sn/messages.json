@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Inowedzera AI mhinduro kuGoogle Search (inofambiswa neGoogle Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Inowedzera AI mhinduro kuGoogle Search (inofambiswa neGoogle Gemma + LLMs dzichangoburwa!)" },
   "menuLabel_autoAnswer": { "message": "Auto-kupindura" },
   "menuLabel_autoSummarizeResults": { "message": "Auto-Summarize Zvabuda" },
   "menuLabel_autoFocusChatbar": { "message": "Taura nesu" },

@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "يضيف إجابات الذكاء الاصطناعي إلى بحث Google (مدعوم من Google Gemma + GPT -4o!)" },
+  "appDesc": { "message": "يضيف إجابات الذكاء الاصطناعي إلى بحث Google (مدعوم من Google Gemma + أحدث LLMs!)" },
   "menuLabel_autoAnswer": { "message": "رد تلقائي (رد المودم على المكالمات الواردة تلقائيا)" },
   "menuLabel_autoSummarizeResults": { "message": "لخص النتائج" },
   "menuLabel_autoFocusChatbar": { "message": "شريط دردشة التركيز التلقائي" },

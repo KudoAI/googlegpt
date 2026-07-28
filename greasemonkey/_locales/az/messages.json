@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Google Axtarışa AI cavabları əlavə edir (Google Gemma + GPT-4o tərəfindən dəstəklənir!)" },
+  "appDesc": {
+    "message": "Google Axtarışa AI cavabları əlavə edir (Google Gemma + ən son LLM-lərlə təchiz edilmişdir!)"
+  },
   "menuLabel_autoAnswer": { "message": "Avto-Answer" },
   "menuLabel_autoSummarizeResults": { "message": "Nəticələri Avtomatik Sümükləndirin" },
   "menuLabel_autoFocusChatbar": { "message": "Avtomatik Fokus Çatbarı" },

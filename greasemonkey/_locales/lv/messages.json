@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Pievieno AI atbildes Google meklēšanai (nodrošina Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Pievieno AI atbildes Google meklēšanai (nodrošina Google Gemma + jaunākās LLM!)" },
   "menuLabel_autoAnswer": { "message": "Automātiska atbilde" },
   "menuLabel_autoSummarizeResults": { "message": "Apkopot rezultātus" },
   "menuLabel_autoFocusChatbar": { "message": "Automātiskās fokusēšanas tērzēšanas josla" },

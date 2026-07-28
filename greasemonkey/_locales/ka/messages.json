@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Ამატებს AI პასუხებს Google Search-ს (Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Ამატებს AI პასუხებს Google ძებნაში (Google Gemma + უახლესი LLM-ები!)" },
   "menuLabel_autoAnswer": { "message": "Ავტომატური პასუხი" },
   "menuLabel_autoSummarizeResults": { "message": "Შედეგების ავტომატური შეჯამება" },
   "menuLabel_autoFocusChatbar": { "message": "Ავტომატურად ფოკუსირებული ჩატების ზოლი" },

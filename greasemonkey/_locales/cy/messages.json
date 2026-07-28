@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Yn ychwanegu atebion AI at Google Search (wedi'i bweru gan Google Gemma + GPT -4o!)" },
+  "appDesc": { "message": "Ychwanegu atebion AI i Google Search (wedi'i bweru gan Google Gemma + y LLMs diweddaraf!)" },
   "menuLabel_autoAnswer": { "message": "Awto - Ategyn" },
   "menuLabel_autoSummarizeResults": { "message": "Canlyniadau Hunan - Fformatio" },
   "menuLabel_autoFocusChatbar": { "message": "Bar Sgwrs Awtomatig - Ffocws" },

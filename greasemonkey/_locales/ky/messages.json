@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Google издөөгө AI жоопторун кошот (Google Gemma + GPT-4o менен иштейт!)" },
+  "appDesc": { "message": "Google издөөгө AI жоопторун кошот (Google Gemma + акыркы LLMs менен иштейт!)" },
   "menuLabel_autoAnswer": { "message": "Auto-Answer" },
   "menuLabel_autoSummarizeResults": { "message": "Undo-type" },
   "menuLabel_autoFocusChatbar": { "message": "Undo-type" },

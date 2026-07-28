@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Google-ийн хайлтанд AI-ийг нэмнэ (Google Gemma + GPT-4o зайтай!)" },
+  "appDesc": { "message": "Google Хайлтанд AI хариу өгнө (Google Gemma + Хамгийн сүүлийн үеийн LLM-г ашигладаг!)" },
   "menuLabel_autoAnswer": { "message": "Автоматаар нэмэх" },
   "menuLabel_autoSummarizeResults": { "message": "Автоматаар хураангуйлах үр дүн" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

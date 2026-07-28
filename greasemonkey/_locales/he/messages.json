@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "מוסיף תשובות בינה מלאכותית לחיפוש Google (מופעל על ידי Google Gemma + GPT -4o!)" },
+  "appDesc": { "message": "מוסיף תשובות בינה מלאכותית לחיפוש Google (מופעל על ידי Google Gemma + LLMs האחרונים!)" },
   "menuLabel_autoAnswer": { "message": "מענה אוטומטי" },
   "menuLabel_autoSummarizeResults": { "message": "סיכום אוטומטי של התוצאות" },
   "menuLabel_autoFocusChatbar": { "message": "פוקוס אוטומטי של סרגל הצ'אט" },

@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "מוסיף אַי ענטפֿערס צו Google זוך (פּאַוערד דורך Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "לייגט צו קינסטלעכע אינטעליגענץ ענטפֿערס צו גוגל זוכן (פּאַוערד דורך גוגל דזשעמאַ + די לעצטע LLMs!)"
+  },
   "menuLabel_autoAnswer": { "message": "אויטאָ-ענטפֿער" },
   "menuLabel_autoSummarizeResults": { "message": "אַוטאָ סאַמערייז רעזולטאַטן" },
   "menuLabel_autoFocusChatbar": { "message": "אַוטאָ-פאָקוס טשאַטבאַר" },

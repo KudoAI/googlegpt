@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "پاسخ‌های هوش مصنوعی را به جستجوی Google اضافه می‌کند (با Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "پاسخ‌های هوش مصنوعی را به جستجوی گوگل اضافه می‌کند (با پشتیبانی گوگل جما + جدیدترین دوره‌های آموزش عالی!)"
+  },
   "menuLabel_autoAnswer": { "message": "پاسخ خودکار" },
   "menuLabel_autoSummarizeResults": { "message": "خلاصه خودکار نتایج" },
   "menuLabel_autoFocusChatbar": { "message": "نوار چت فوکوس خودکار" },

@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Adiciona respostas de IA ao Google Search (alimentado por Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Engade respostas de intelixencia artificial a Google Search (alimentado por Google Gemma + as últimas LLMs!)"
+  },
   "menuLabel_autoAnswer": { "message": "Resposta automática" },
   "menuLabel_autoSummarizeResults": { "message": "Resumir automaticamente os resultados" },
   "menuLabel_autoFocusChatbar": { "message": "Barra de conversa de foco automático" },

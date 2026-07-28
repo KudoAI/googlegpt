@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Adiciona respostas de IA à Pesquisa do Google (com tecnologia Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Adiciona respostas de IA à Pesquisa do Google (com tecnologia do Google Gemma + os LLMs mais recentes!)"
+  },
   "menuLabel_autoAnswer": { "message": "Atendimento  Automático" },
   "menuLabel_autoSummarizeResults": { "message": "Resumir resultados automaticamente" },
   "menuLabel_autoFocusChatbar": { "message": "Barra de Chat com Foco Automático" },

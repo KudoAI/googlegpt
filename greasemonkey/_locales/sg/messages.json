@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Add AI answers to Google Search (na lege ti Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Add AI answers to Google Search (na lege ti Google Gemma + ti ndangba LLMs!)" },
   "menuLabel_autoAnswer": { "message": "Auto article" },
   "menuLabel_autoSummarizeResults": { "message": "Aye so asi na yâ ti oto-summarize" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar Anglais" },

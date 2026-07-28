@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Google தேடலுக்கு AI பதில்களைச் சேர்க்கிறது (Google Gemma + GPT-4o மூலம் இயக்கப்படுகிறது!)" },
+  "appDesc": {
+    "message": "Google தேடலுக்கு AI பதில்களைச் சேர்க்கிறது (Google Gemma + மூலம் இயக்கப்படுகிறது சமீபத்திய LLMs!)"
+  },
   "menuLabel_autoAnswer": { "message": "தானாக பதிலளிக்கவும்" },
   "menuLabel_autoSummarizeResults": { "message": "தானியங்கு சுருக்க முடிவுகள்" },
   "menuLabel_autoFocusChatbar": { "message": "ஆட்டோ-ஃபோகஸ் சாட்பார்" },

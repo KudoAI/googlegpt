@@ -103,7 +103,7 @@
 
 ## 🕶️ Proxy Mode
 
-Proxy API Mode (disabled by default) returns text responses using Google Gemma + GPT-4o, without the need for a chatgpt.com account.
+Proxy API Mode (disabled by default) returns text responses using Google Gemma + the latest LLMs, without the need for a chatgpt.com account.
 
 When disabled, a ChatGPT account is required to fetch responses. If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
@@ -608,7 +608,7 @@ For even more ChatGPT extensions, visit:
 
 ### <img src="https://cdn.jsdelivr.net/gh/KudoAI/bravegpt/assets/images/icons/app/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="auto" /></a>
 
-> Bring the magic of ChatGPT to Brave Search (powered by GPT-4o!)
+> Bring the magic of ChatGPT to Brave Search (powered by the latest LLMs!)
 [Install](https://docs.bravegpt.com/#-installation) / [Readme](https://docs.bravegpt.com/#readme) / [Discuss](https://github.com/KudoAI/bravegpt/discussions)
 
 <img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@f0e2ef7/assets/images/separators/gradient-aqua.png">

@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Adds AI answers to Google Search (powered by Google Gemma + the latest LLMs!)" },
   "menuLabel_autoAnswer": { "message": "Auto-Answer" },
   "menuLabel_autoSummarizeResults": { "message": "Auto-Summarize Results" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

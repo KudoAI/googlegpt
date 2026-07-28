@@ -1,6 +1,6 @@
 {
   "appDesc": {
-    "message": "E tsenya dikarabo tsa AI mo Patlisisong ya Google (e e dirisiwang ke Google Gemma + GPT-4o!)"
+    "message": "E tsenya dikarabo tsa AI mo Patlisisong ya Google (e e dirisiwang ke Google Gemma + di-LLM tsa sesweng!)"
   },
   "menuLabel_autoAnswer": { "message": "Auto-Answer" },
   "menuLabel_autoSummarizeResults": { "message": "Dipoelo tsa go Itirisa ka Ntlha ya Mmatota" },

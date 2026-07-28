@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "เพิ่มคำตอบ AI ใน Google Search (ขับเคลื่อนโดย Google Gemma + GPT -4o!)" },
+  "appDesc": { "message": "เพิ่มคำตอบ AI ใน Google Search (ขับเคลื่อนโดย Google Gemma + LLMs ล่าสุด!)" },
   "menuLabel_autoAnswer": { "message": "รับสายอัตโนมัติ" },
   "menuLabel_autoSummarizeResults": { "message": "สรุปผลลัพธ์อัตโนมัติ" },
   "menuLabel_autoFocusChatbar": { "message": "แถบสนทนาโฟกัสอัตโนมัติ" },

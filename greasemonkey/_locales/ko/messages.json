@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Google 검색에 AI 답변을 추가합니다 (Google Gemma + GPT-4o 제공!)" },
+  "appDesc": { "message": "Google 검색에 AI 답변을 추가합니다 (Google Gemma + 최신 LLM 제공!)" },
   "menuLabel_autoAnswer": { "message": "자동 답변" },
   "menuLabel_autoSummarizeResults": { "message": "자동 요약 결과" },
   "menuLabel_autoFocusChatbar": { "message": "자동 초점 채팅창" },

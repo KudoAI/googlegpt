@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Įtraukia DI atsakymus į Google paiešką (sukurta Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Įtraukia DI atsakymus į „Google“ paiešką (sukurta „Google Gemma +“ naujausių LLM!)" },
   "menuLabel_autoAnswer": { "message": "Automatinis atsiliepimas" },
   "menuLabel_autoSummarizeResults": { "message": "Automatiškai apibendrinti rezultatus" },
   "menuLabel_autoFocusChatbar": { "message": "Automatinio fokusavimo pokalbių juosta" },

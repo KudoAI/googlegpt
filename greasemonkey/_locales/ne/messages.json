@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Google खोजमा AI उत्तरहरू थप्दछ (Google Gemma + GPT -4o द्वारा संचालित!)" },
+  "appDesc": { "message": "Google खोजमा AI उत्तरहरू थप्छ (Google Gemma + लेटेस्ट LLMs द्वारा संचालित!)" },
   "menuLabel_autoAnswer": { "message": "स्वतः जवाफ दिनुहोस्" },
   "menuLabel_autoSummarizeResults": { "message": "परिणामहरू स्वतः सारांश गर्नुहोस्" },
   "menuLabel_autoFocusChatbar": { "message": "स्वत: फोकस कुराकानीपट्टी" },

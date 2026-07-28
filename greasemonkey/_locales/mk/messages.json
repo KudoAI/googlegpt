@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Додава AI одговори на Google Search (овозможено од Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Додава одговори за вештачка интелигенција на Google Search (овозможено од Google Gemma + најновите LLMs!)"
+  },
   "menuLabel_autoAnswer": { "message": "Автоматски одговор" },
   "menuLabel_autoSummarizeResults": { "message": "Автоматско сумирање на резултатите" },
   "menuLabel_autoFocusChatbar": { "message": "Лента за разговор за автоматско фокусирање" },

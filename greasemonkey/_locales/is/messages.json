@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Bætir svörum gervigreindar við Google leit (keyrð af Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Bætir AI svörum við Google leit (knúið af Google Gemma + nýjustu LLMs!)" },
   "menuLabel_autoAnswer": { "message": "Sjálfvirkt svar" },
   "menuLabel_autoSummarizeResults": { "message": "Sjálfvirk samantekt niðurstaðna" },
   "menuLabel_autoFocusChatbar": { "message": "Spjallslá með sjálfvirkum fókus" },

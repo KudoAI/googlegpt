@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Google Search-এ AI উত্তর যোগ করে (Google Gemma + GPT-4o দ্বারা চালিত!)" },
+  "appDesc": { "message": "Google Search-এ AI উত্তর যোগ করে (Google Gemma + দ্বারা চালিত সর্বশেষ LLM!)" },
   "menuLabel_autoAnswer": { "message": "অটো-অনুরোধ" },
   "menuLabel_autoSummarizeResults": { "message": "স্বতঃস্ফূর্ত ফলাফল" },
   "menuLabel_autoFocusChatbar": { "message": "অটো-ফোকাস চ্যাটবার" },

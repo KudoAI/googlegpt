@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ (Google Gemma + GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
+  "appDesc": { "message": "ਗੂਗਲ ਸਰਚ ਵਿੱਚ ਏਆਈ ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ (ਗੂਗਲ ਜੈਮਾ + ਨਵੀਨਤਮ ਐਲਐਲਐਮ ਦੁਆਰਾ ਸੰਚਾਲਿਤ!" },
   "menuLabel_autoAnswer": { "message": "ਆਟੋ-ਜਵਾਬ" },
   "menuLabel_autoSummarizeResults": { "message": "ਆਟੋ- ਸੰਖੇਪ ਨਤੀਜੇ" },
   "menuLabel_autoFocusChatbar": { "message": "ਆਟੋ-ਫੋਕਸ ਚੈਟਬਾਰ" },

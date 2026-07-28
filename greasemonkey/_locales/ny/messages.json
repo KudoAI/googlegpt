@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Imawonjezera mayankho a AI ku Google Search (yoyendetsedwa ndi Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Imawonjezera mayankho a AI ku Google Search (yoyendetsedwa ndi Google Gemma + ma LLM atsopano!)"
+  },
   "menuLabel_autoAnswer": { "message": "Auto-Answer" },
   "menuLabel_autoSummarizeResults": { "message": "Zotsatira za Auto-Summarize" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

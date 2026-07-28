@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Pridáva odpovede AI do vyhľadávania Google (poháňané službou Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Pridáva odpovede AI do vyhľadávania Google (poháňa ich Google Gemma + najnovšie LLM!)" },
   "menuLabel_autoAnswer": { "message": "Automatická odpoveď" },
   "menuLabel_autoSummarizeResults": { "message": "Automaticky zhrnúť výsledky" },
   "menuLabel_autoFocusChatbar": { "message": "Chatbar s automatickým zaostrovaním" },

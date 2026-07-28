@@ -1,5 +1,7 @@
 {
-  "appDesc": { "message": "Ifaka izimpendulo ze-AI ku-Google Search (inikwe amandla yi-Google Gemma + GPT-4o!)" },
+  "appDesc": {
+    "message": "Ifaka izimpendulo ze-AI ku-Google Search (inikwe amandla yi-Google Gemma + ama-LLM wakamuva!)"
+  },
   "menuLabel_autoAnswer": { "message": "Ukuphendula Okuzenzakalelayo" },
   "menuLabel_autoSummarizeResults": { "message": "Sebenzisa Imiphumela Ngokuzenzakalelayo" },
   "menuLabel_autoFocusChatbar": { "message": "I-Auto-Focus Chatbar" },

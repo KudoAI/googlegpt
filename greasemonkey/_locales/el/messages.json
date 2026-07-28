@@ -1,6 +1,6 @@
 {
   "appDesc": {
-    "message": "Προσθέτει απαντήσεις AI στην Αναζήτηση Google (τροφοδοτείται από το Google Gemma + GPT-4o!)"
+    "message": "Προσθέτει απαντήσεις τεχνητής νοημοσύνης στην Αναζήτηση Google (τροφοδοτείται από το Google Gemma + τα πιο πρόσφατα LLM!)"
   },
   "menuLabel_autoAnswer": { "message": "Αυτόματη απάντηση" },
   "menuLabel_autoSummarizeResults": { "message": "Αυτόματη σύνοψη αποτελεσμάτων" },

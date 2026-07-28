@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Google іздеуіне AI жауаптарын қосады (Google Gemma + GPT-4o арқылы жұмыс істейді!)" },
+  "appDesc": { "message": "Google Search-ке AI жауаптарын қосады (Google Gemma + соңғы LLM-мен жұмыс істейді!)" },
   "menuLabel_autoAnswer": { "message": "Автоматты ансвер" },
   "menuLabel_autoSummarizeResults": { "message": "Нәтижелерді автоматты түрде жинақтау" },
   "menuLabel_autoFocusChatbar": { "message": "Автоматты фокустық чат панелі" },

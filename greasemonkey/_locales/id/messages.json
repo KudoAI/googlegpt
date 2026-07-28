@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "Menambahkan jawaban AI ke Google Penelusuran (didukung oleh Google Gemma + GPT -4o!)" },
+  "appDesc": { "message": "Menambahkan jawaban AI ke Google Penelusuran (didukung oleh Google Gemma + LLM terbaru!)" },
   "menuLabel_autoAnswer": { "message": "Jawaban Otomatis" },
   "menuLabel_autoSummarizeResults": { "message": "Hasil Ringkasan Otomatis" },
   "menuLabel_autoFocusChatbar": { "message": "Bilah Obrolan Fokus Otomatis" },

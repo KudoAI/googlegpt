@@ -1,5 +1,5 @@
 {
-  "appDesc": { "message": "ለGoogle ፍለጋ (በGoogle Gemma + GPT-4o የተጎላበተው" },
+  "appDesc": { "message": "ለGoogle ፍለጋ (በGoogle Gemma + የቅርብ ጊዜ LLMs የተጎላበተው!" },
   "menuLabel_autoAnswer": { "message": "Auto-Answer" },
   "menuLabel_autoSummarizeResults": { "message": "Auto-Summarize ውጤቶች" },
   "menuLabel_autoFocusChatbar": { "message": "ራስ-ፎኩስ ቻትባር" },
