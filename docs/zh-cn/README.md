@@ -341,7 +341,7 @@
                 <a href="https://www.waterfox.net" title="Waterfox">
                     <img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@d11d2ee/assets/images/icons/browsers/waterfox/icon16.png"
                          width=16 alt="[Waterfox]"></a>
-                <a href="https://librewolf.net" title="LibreWolf">
+                <a href="https://www.librewolf.net" title="LibreWolf">
                     <img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@d11d2ee/assets/images/icons/browsers/librewolf/icon16.svg"
                          width=16 alt="[LibreWolf]"></a>
             </td>
