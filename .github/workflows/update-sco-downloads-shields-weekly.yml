@@ -47,7 +47,7 @@ jobs:
             exit 1
           fi
           shields_updated=false
-          for readme in $(find greasemonkey/docs -name "README.md") ; do
+          for readme in $(find greasemonkey/docs docs -name "README.md" 2>/dev/null) ; do
             old_readme=$(<"$readme")
             sed -i "s/\(badge\/[^-]*-\)[0-9.,KMBkmb+]\+\(-af68ff\)/\1${TOTAL_SCO_DLS}\2/gI" "$readme"
             new_readme=$(<"$readme")
