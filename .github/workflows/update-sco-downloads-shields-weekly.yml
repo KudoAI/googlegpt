@@ -1,0 +1,97 @@
+name: Update SCO downloads shields in readmes, then sync to adamlui/userscripts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 7 * * 3" # every Wed @ 7:23 AM
+
+jobs:
+  update-root-downloads-shields:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      TZ: PST8PDT
+
+    steps:
+      - name: Checkout KudoAI/googlegpt
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          path: KudoAI/googlegpt
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Fetch/sum downloads count
+        run: |
+          raw_sco_dls=$(curl -s https://scriptcat.org/en/script-show-page/6371 | \
+            grep -oP 'Total Installs.*?<span class="ant-statistic-content-value">\K[^<]+' | head -1)
+          echo "Total SCO downloads (formatted): $raw_sco_dls"
+          if [ -z "$raw_sco_dls" ] || [ "$raw_sco_dls" = "0" ] ; then
+            echo "Error: couldn't get install count"
+            exit 1
+          fi
+          echo "TOTAL_SCO_DLS=$raw_sco_dls" >> $GITHUB_ENV
+
+      - name: Update README shields
+        run: |
+          cd ${{ github.workspace }}/KudoAI/googlegpt
+          TOTAL_SCO_DLS="${{ env.TOTAL_SCO_DLS }}"
+          if [ -z "$TOTAL_SCO_DLS" ] || [ "$TOTAL_SCO_DLS" = "0" ] ; then
+            echo "Error: couldn't get install count"
+            exit 1
+          fi
+          shields_updated=false
+          for readme in $(find greasemonkey/docs -name "README.md") ; do
+            old_readme=$(<"$readme")
+            sed -i "s/\(badge\/[^-]*-\)[0-9.,KMBkmb+]\+\(-af68ff\)/\1${TOTAL_SCO_DLS}\2/gI" "$readme"
+            new_readme=$(<"$readme")
+            if [[ "$old_readme" != "$new_readme" ]] ; then
+              shields_updated=true ; echo "Updated: $readme" ; fi
+          done
+          if [ "$shields_updated" = true ] ; then
+            echo "SHIELDS_UPDATED=true" >> $GITHUB_ENV
+          else
+            echo "Shields already up-to-date"
+          fi
+
+      - name: Sync /greasemonkey to adamlui/userscripts/chatgpt/googlegpt/
+        run: |
+          rsync -avhc --delete \
+            ${{ github.workspace }}/KudoAI/googlegpt/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/googlegpt/
+
+      - name: Config committer
+        if: env.SHIELDS_UPDATED == 'true'
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PRIVATE_ID: ${{ secrets.GPG_PRIVATE_ID }}
+        run: |
+          gpg --batch --import <(echo "$GPG_PRIVATE_KEY")
+          git config --global commit.gpgsign true
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey "$GPG_PRIVATE_ID"
+
+      - name: Push changes to KudoAI/googlegpt
+        if: env.SHIELDS_UPDATED == 'true'
+        run: |
+          cd ${{ github.workspace }}/KudoAI/googlegpt
+          git add . && git commit -n -m "Updated downloads shield counters in Greasemonkey readmes" || true
+          git pull --rebase 
+          git push
+
+      - name: Push changes to adamlui/userscripts
+        if: env.SHIELDS_UPDATED == 'true'
+        run: |
+          cd ${{ github.workspace }}/adamlui/userscripts
+          git add . && git commit -n -m \
+            "Updated downloads shield counters in Greasemonkey readmes \
+              ↞ [auto-sync from https://github.com/KudoAI/googlegpt]" || true
+          git pull --rebase 
+          git push
