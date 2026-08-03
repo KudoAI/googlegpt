@@ -20,7 +20,8 @@
     "review": {
       "linkedin": "https://www.linkedin.com/products/kudo-ai-googlegpt/",
       "saashub": "https://www.saashub.com/googlegpt-reviews/new",
-      "scriptcat": "https://scriptcat.org/script-show-page/6419/comment"
+      "scriptcat": "https://scriptcat.org/script-show-page/6419/comment",
+      "trustpilot": "https://www.trustpilot.com/evaluate/kudoai.org"
     },
     "support": "https://github.com/KudoAI/googlegpt/issues",
     "update": { "gm": "https://scriptcat.org/scripts/code/6371/googlegpt.meta.js" }
