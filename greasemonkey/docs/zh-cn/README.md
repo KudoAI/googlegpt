@@ -610,7 +610,7 @@
 ### <img src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/icons/app/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.org) &nbsp;<a href="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/wolfram-award/letter.pdf"><img height=20 src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/badges/wolfram-award/gold-badge.png"></a>
 
 > 为亚马逊购物体验增添 AI 聊天及商品/类目摘要功能——由最新大型语言模型（LLM）强力驱动！
-<br>[安装](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
+<br>[安装](https://scriptcat.org/scripts/code/7318/amazongpt.user.js) /
 [自述文件](https://github.com/KudoAI/amazongpt/#readme) /
 [讨论](https://github.com/KudoAI/amazongpt/discussions)
 

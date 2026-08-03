@@ -601,7 +601,7 @@ For even more ChatGPT extensions, visit:
 ### <img src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/icons/app/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.org)
 
 > Add AI chat & product/category summaries to Amazon shopping, powered by the latest LLMs like GPT-4o!
-[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) / [Readme](https://amazongpt.kudoai.org/#readme) / [Discuss](https://github.com/KudoAI/amazongpt/discussions)
+[Install](https://scriptcat.org/scripts/code/7318/amazongpt.user.js) / [Readme](https://amazongpt.kudoai.org/#readme) / [Discuss](https://github.com/KudoAI/amazongpt/discussions)
 
 ### <img width=16 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@8841371/assets/images/icons/infinity-symbol/circled/icon32.png"> [ChatGPT Infinity](https://github.com/adamlui/chatgpt-infinity/#readme)
 
