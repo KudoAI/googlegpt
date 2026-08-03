@@ -36,7 +36,7 @@
     <img alt="[SonarCloud vulnerabilities]" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3DKudoAI_googlegpt%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonar&logoColor=white&labelColor=464646&label=Vulnerabilities&color=ffef00"></a>
 <a href="https://github.com/awesome-scripts/awesome-userscripts/#-chatgpt">
     <img alt="[Mentioned in Awesome]" src="https://img.shields.io/badge/Mentioned_in-Awesome-cb48dc?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://kudoai.com/?utm_source=googlegpt&utm_content=github_shield">
+<a href="https://kudoai.org/?utm_source=googlegpt&utm_content=github_shield">
     <img alt="[Built by KudoAI]" src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.jsdelivr.com/package/gh/KudoAI/googlegpt?tab=stats">
     <img alt="[jsDelivr stats]" src="https://img.shields.io/jsdelivr/gh/hm/KudoAI/googlegpt?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
@@ -598,10 +598,10 @@ For even more ChatGPT extensions, visit:
 
 ## 📜 Related scripts
 
-### <img src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/icons/app/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com)
+### <img src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/icons/app/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.org)
 
 > Add AI chat & product/category summaries to Amazon shopping, powered by the latest LLMs like GPT-4o!
-[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) / [Readme](https://amazongpt.kudoai.com/#readme) / [Discuss](https://github.com/KudoAI/amazongpt/discussions)
+[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) / [Readme](https://amazongpt.kudoai.org/#readme) / [Discuss](https://github.com/KudoAI/amazongpt/discussions)
 
 ### <img width=16 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@8841371/assets/images/icons/infinity-symbol/circled/icon32.png"> [ChatGPT Infinity](https://github.com/adamlui/chatgpt-infinity/#readme)
 

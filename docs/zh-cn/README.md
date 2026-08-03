@@ -573,7 +573,7 @@
     <img src="https://cdn.jsdelivr.net/gh/KudoAI/googlegpt/assets/images/logos/dependencies/collage/black.png">
 </picture>
 
-[chatgpt.js](https://chatgpt.js.org) © 2023–2026 [KudoAI](https://kudoai.com) 及贡献者，基于 MIT 许可证发布。
+[chatgpt.js](https://chatgpt.js.org) © 2023–2026 [KudoAI](https://kudoai.org) 及贡献者，基于 MIT 许可证发布。
 <br>[generate-ip](https://generate-ip.org) © 2024–2026 [Adam Lui][author] 及贡献者，基于 MIT 许可证
 <br>[highlight.js](https://highlightjs.org) © 2006 [Ivan Sagalaev](https://github.com/isagalaev)，基于 BSD 3-Clause 许可证
 <br>[KaTeX](https://katex.org) © 2013–2020 [Khan Academy](https://www.khanacademy.org) 及其他贡献者，基于 MIT 许可证
@@ -607,7 +607,7 @@
 
 ## 📜 相关脚本
 
-### <img src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/icons/app/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com) &nbsp;<a href="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/wolfram-award/letter.pdf"><img height=20 src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/badges/wolfram-award/gold-badge.png"></a>
+### <img src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/icons/app/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.org) &nbsp;<a href="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/wolfram-award/letter.pdf"><img height=20 src="https://cdn.jsdelivr.net/gh/KudoAI/amazongpt@579eef3/assets/images/badges/wolfram-award/gold-badge.png"></a>
 
 > 为亚马逊购物体验增添 AI 聊天及商品/类目摘要功能——由最新大型语言模型（LLM）强力驱动！
 <br>[安装](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
